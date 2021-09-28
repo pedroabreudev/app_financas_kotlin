@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import br.com.diastecnologia.financas_kotlin.R
+import br.com.diastecnologia.financas_kotlin.model.Transacao
+import kotlinx.android.synthetic.main.transacao_item.view.*
 
-class ListaTransacoesAdapter(transacoes: List<String>,
-                             context: Context) : BaseAdapter(){
+class ListaTransacoesAdapter(
+    transacoes: List<Transacao>,
+    context: Context) : BaseAdapter(){
 
     private val transacoes = transacoes
     private val context = context
@@ -18,7 +21,7 @@ class ListaTransacoesAdapter(transacoes: List<String>,
         return transacoes.size
     }
 
-    override fun getItem(posicao: Int): String {
+    override fun getItem(posicao: Int): Transacao {
         return transacoes[posicao]
 
     }
@@ -28,6 +31,12 @@ class ListaTransacoesAdapter(transacoes: List<String>,
     }
 
     override fun getView(posicao: Int, view: View?, parent: ViewGroup?) : View {
-        return LayoutInflater.from(context).inflate(R.layout.transacao_item, parent,false)
+        val viewCriada = LayoutInflater.from(context).inflate(R.layout.transacao_item, parent, false)
+
+        val transacao = transacoes[posicao]
+
+        viewCriada.transacao_valor.setText(transacao.getValor().toString())
+
+        return viewCriada
     }
 }
