@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import br.com.diastecnologia.financas_kotlin.R
+import br.com.diastecnologia.financas_kotlin.extension.formataParaBrasileiro
 import br.com.diastecnologia.financas_kotlin.model.Transacao
 import kotlinx.android.synthetic.main.transacao_item.view.*
-import java.text.SimpleDateFormat
 
 class ListaTransacoesAdapter(
     transacoes: List<Transacao>,
@@ -39,13 +39,13 @@ class ListaTransacoesAdapter(
         viewCriada.transacao_valor.text = transacao.valor.toString()
         viewCriada.transacao_categoria.text = transacao.categoria
 
-        val formatoBrasileiro = "dd/MM/yyyy"
-        val formatter = SimpleDateFormat(formatoBrasileiro)
-        val dataFormatada = formatter.format(transacao.data.time)
-        viewCriada.transacao_data.text = dataFormatada
+
+        viewCriada.transacao_data.text = transacao.data.formataParaBrasileiro()
 
         //viewCriada.transacao_icone.setImageResource()
 
         return viewCriada
     }
+
+
 }
