@@ -44,23 +44,16 @@ class ListaTransacoesAdapter(
             viewCriada.transacao_valor
                 .setTextColor(ContextCompat.getColor(context, R.color.receita))
             viewCriada.transacao_icone.setBackgroundResource(R.drawable.icone_transacao_item_receita)
+
         } else {
             viewCriada.transacao_valor
                 .setTextColor(ContextCompat.getColor(context, R.color.despesa))
             viewCriada.transacao_icone.setBackgroundResource(R.drawable.icone_transacao_item_despesa)
-
         }
 
-
-
-        viewCriada.transacao_valor.text = transacao.valor.toString()
+        viewCriada.transacao_valor.text = transacao.valor.formataParaBrasileiro()
         viewCriada.transacao_categoria.text = transacao.categoria
-
-
         viewCriada.transacao_data.text = transacao.data.formataParaBrasileiro()
-
-        //viewCriada.transacao_icone.setImageResource()
-
         return viewCriada
     }
 
