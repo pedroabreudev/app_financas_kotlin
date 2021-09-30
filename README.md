@@ -16,8 +16,8 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/tgmarinho/README-ecoleta"> 
   
-  <a href="https://github.com/tgmarinho/README-ecoleta/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tgmarinho/README-ecoleta">
+  <a href="https://github.com/pedroabreudev/app_financas_kotlin/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/pedroabreudev/README">
   </a>
     
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
