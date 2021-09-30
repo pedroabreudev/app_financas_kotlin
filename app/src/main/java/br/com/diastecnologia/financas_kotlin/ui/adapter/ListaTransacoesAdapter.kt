@@ -8,6 +8,7 @@ import android.widget.BaseAdapter
 import androidx.core.content.ContextCompat
 import br.com.diastecnologia.financas_kotlin.R
 import br.com.diastecnologia.financas_kotlin.extension.formataParaBrasileiro
+import br.com.diastecnologia.financas_kotlin.extension.limitaEmAte
 import br.com.diastecnologia.financas_kotlin.model.Tipo
 import br.com.diastecnologia.financas_kotlin.model.Transacao
 import kotlinx.android.synthetic.main.transacao_item.view.*
@@ -19,6 +20,7 @@ class ListaTransacoesAdapter(
 
     private val transacoes = transacoes
     private val context = context
+    private val limiteDaCategoria = 14
 
 
     override fun getCount(): Int {
@@ -51,8 +53,14 @@ class ListaTransacoesAdapter(
             viewCriada.transacao_icone.setBackgroundResource(R.drawable.icone_transacao_item_despesa)
         }
 
+        var categoriaFormatada = transacao.categoria
+        if (categoriaFormatada.length > 14) {
+            categoriaFormatada = "${categoriaFormatada.substring(0, 14)}..."
+        }
+
         viewCriada.transacao_valor.text = transacao.valor.formataParaBrasileiro()
-        viewCriada.transacao_categoria.text = transacao.categoria
+
+        viewCriada.transacao_categoria.text = transacao.categoria.limitaEmAte(limiteDaCategoria)
         viewCriada.transacao_data.text = transacao.data.formataParaBrasileiro()
         return viewCriada
     }
