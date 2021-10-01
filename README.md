@@ -8,8 +8,11 @@
 </h1>
 
 <h3 align="center">
-    🌱 Seu marketplace de coleta de resíduos. Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente. 💚
+Ajudamos pessoas a organizar suas finanças de forma eficiente.
 </h3>
+
+<!--- 
+
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/tgmarinho/README-ecoleta?color=%2304D361">
@@ -60,7 +63,7 @@ Tabela de conteúdos
    * [Como contribuir no projeto](#-como-contribuir-no-projeto)
    * [Autor](#-autor)
    * [Licença](#user-content--licença)
-<!--te-->
+<!--te 8-&->
 
 
 ## 💻 Sobre o projeto
@@ -301,6 +304,7 @@ Feito com ❤️ por Thiago Marinho 👋🏽 [Entre em contato!](https://www.lin
 
 ---
 
+--->
 ##  Versões do README
 
-[Português 🇧🇷](./README.md)  |  [Inglês sem emojis 🇺🇸](./README-en.md) | [Portugues sem logo  🇧🇷](./README-sem-logo.md) 
+[Português 🇧🇷](./README.md)  
